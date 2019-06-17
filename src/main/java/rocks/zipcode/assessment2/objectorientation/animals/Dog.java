@@ -6,6 +6,6 @@ package rocks.zipcode.assessment2.objectorientation.animals;
  */
 public class Dog extends Animal implements Woofer{
     public String speak() {
-        return "Woof!\nWoof!";
+        return Woofer.speak();
     }
 }

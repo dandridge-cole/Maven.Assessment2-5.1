@@ -80,13 +80,11 @@ public class Address {
     }
 
     public boolean equals(Address o) {
-        if(!this.zipcode.equals(o.zipcode)||
-                !this.state.equals(o.state)||
-                !this.city.equals(o.city)||
-                !this.addressLine1.equals(o.addressLine1)||
-                !this.addressLine2.equals(o.addressLine2)
-        ) return false;
-        return true;
+        if(!this.zipcode.equals(o.zipcode))return false;
+        if(!this.state.equals(o.state))return false;
+        if(!this.city.equals(o.city))return false;
+        if(!this.addressLine1.equals(o.addressLine1)) return false;
+        return this.addressLine2.equals(o.addressLine2);
     }
 
 

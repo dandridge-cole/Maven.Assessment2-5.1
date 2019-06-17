@@ -55,11 +55,13 @@ public class Person {
     }
 
     public boolean equals(Person o) {
-        if (this.address == null) this.address=new Address();
-        if(o.address == null) o.address = new Address();
+        if(this.address==null&&o.address==null);
+        else if (this.address==null||o.address==null)return false;
+        if(this.id==null&&o.id==null);
+        else if (this.id==null||o.id==null)return false;
         return
-                ((this.id==null&&o.id==null)||this.id==o.id) &&
+                (this.id==null||this.id.equals(o.id)) &&
                 this.name.equals(o.name) &&
-                (this.address.equals(o.address));
+                (this.address==null||this.address.equals(o.address));
     }
 }
