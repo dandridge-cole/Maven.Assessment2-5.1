@@ -79,13 +79,15 @@ public class Address {
                 this.addressLine1, this.addressLine2, this.city, this.state, this.zipcode);
     }
 
-    public boolean equals(Address o) {
-        if(!this.zipcode.equals(o.zipcode))return false;
-        if(!this.state.equals(o.state))return false;
-        if(!this.city.equals(o.city))return false;
-        if(!this.addressLine1.equals(o.addressLine1)) return false;
-        return this.addressLine2.equals(o.addressLine2);
+    @Override
+    public boolean equals(Object o) {
+        if(this == o)return true;
+        if(o==null || this.getClass() != o.getClass())return false;
+        Address ao = (Address)o;
+        if(!this.zipcode.equals(ao.zipcode))return false;
+        if(!this.state.equals(ao.state))return false;
+        if(!this.city.equals(ao.city))return false;
+        if(!this.addressLine1.equals(ao.addressLine1)) return false;
+        return this.addressLine2.equals(ao.addressLine2);
     }
-
-
 }

@@ -54,14 +54,18 @@ public class Person {
         return String.format("Person{id=%d, name='%s', address=%s}",this.id,this.name,this.address.toString());
     }
 
-    public boolean equals(Person o) {
-        if(this.address==null&&o.address==null);
-        else if (this.address==null||o.address==null)return false;
-        if(this.id==null&&o.id==null);
-        else if (this.id==null||o.id==null)return false;
+    @Override
+    public boolean equals(Object o) {
+        if(this == o)return true;
+        if(o==null || this.getClass() != o.getClass())return false;
+        Person po = (Person)o;
+        if(this.address==null&&po.address==null);
+        else if (this.address==null||po.address==null)return false;
+        if(this.id==null&&po.id==null);
+        else if (this.id==null||po.id==null)return false;
         return
-                (this.id==null||this.id.equals(o.id)) &&
-                this.name.equals(o.name) &&
-                (this.address==null||this.address.equals(o.address));
+                (this.id==null||this.id.equals(po.id)) &&
+                this.name.equals(po.name) &&
+                (this.address==null||this.address.equals(po.address));
     }
 }
