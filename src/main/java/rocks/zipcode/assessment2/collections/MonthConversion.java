@@ -49,11 +49,11 @@ public class MonthConversion {
      * @param monthName - name of month
      * @return - the ordinal of the month in the year
      */
-    public int getNumber(String monthName) {
+    public Integer getNumber(String monthName) {
         for(Map.Entry<Integer,String> entry:this.months.entrySet()){
             if(entry.getValue().equals(monthName))return entry.getKey();
         }
-        return -1;
+        return null;
     }
 
     /**

@@ -14,7 +14,7 @@ public class Person {
      * @param address - address of person
      */
     public Person(Long id, String name, Address address) {
-        this.address = address;
+        this.address=address;
         this.name=name;
         this.id=id;
     }
@@ -55,9 +55,11 @@ public class Person {
     }
 
     public boolean equals(Person o) {
+        if (this.address == null) this.address=new Address();
+        if(o.address == null) o.address = new Address();
         return
                 ((this.id==null&&o.id==null)||this.id==o.id) &&
                 this.name.equals(o.name) &&
-                ((this.address==null&&o.address==null)||this.address.equals(o.address));
+                (this.address.equals(o.address));
     }
 }
